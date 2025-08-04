@@ -10,7 +10,7 @@ project(${MAIN_PROJECT} LANGUAGES C)
 
 include_directories(include/${MAIN_PROJECT})
 
-add_subdirectory(tests)
+add_subdirectory(test)
 
 set(SOURCE_FILE_LIST
     src/expeval.c
