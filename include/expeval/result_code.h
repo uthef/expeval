@@ -1,8 +1,6 @@
 #ifndef EXPEVAL_RESULT_CODE_H
 #define EXPEVAL_RESULT_CODE_H
 
-typedef enum expeval_result_code expeval_result_code;
-
 enum expeval_result_code {
     EXPEVAL_UNKNOWN = -1,
     EXPEVAL_OK = 0,
@@ -20,6 +18,8 @@ enum expeval_result_code {
     EXPEVAL_IDENTIFIER_NOT_FOUND = 12,
     EXPEVAL_IDENTIFIER_TOO_LONG = 13
 };
+
+typedef enum expeval_result_code expeval_result_code;
 
 const char* expeval_result_code_as_str(expeval_result_code);
 
