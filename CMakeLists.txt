@@ -4,7 +4,7 @@ set(MAIN_PROJECT expeval)
 
 project(${MAIN_PROJECT} LANGUAGES C)
 
-include_directories(${CMAKE_SOURCE_DIR}/include/${MAIN_PROJECT})
+include_directories(include/${MAIN_PROJECT})
 
 set(SOURCE_FILE_LIST
     src/expeval.c
