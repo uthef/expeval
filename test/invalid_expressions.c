@@ -36,6 +36,7 @@ int main(int argc, char** argv) {
     test_invalid_expression("(2 + 31) (761 - 1)", EXPEVAL_OPERATOR_EXPECTED, NULL);
     test_invalid_expression("3 + 8 var", EXPEVAL_OPERATOR_EXPECTED, NULL);
     test_invalid_expression("34934348 + -)", EXPEVAL_UNEXPECTED_CLOSING_BRACKET, NULL);
+    test_invalid_expression("3 + (900 * 30 +)", EXPEVAL_HANGING_OPERATOR, NULL);
 
     return 0;
 }

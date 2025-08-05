@@ -124,7 +124,7 @@ void parse_from(const char* exp, size_t* idx, expeval_result* result, unsigned i
                 break;
             }
 
-            last_element = ELEMENT_BRACKET;
+            flags |= HAS_CLOSING_BRACKET;
             break;
         }
 
@@ -244,7 +244,7 @@ void parse_from(const char* exp, size_t* idx, expeval_result* result, unsigned i
     }
 
     if (result->code == EXPEVAL_OK) {
-        if (depth > 0 && last_element != ELEMENT_BRACKET) {
+        if (depth > 0 && IS_FLAG_NOT_SET(flags, HAS_CLOSING_BRACKET)) {
             result->code = EXPEVAL_BRACKET_NOT_CLOSED;
             result->err_pos = start_idx - 1;
         }
