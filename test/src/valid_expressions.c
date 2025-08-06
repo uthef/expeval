@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
     TEST_VALID_EXP(12 + 8 - 16 + (-24));
     TEST_VALID_EXP(-5e-5-((-1)));
     TEST_VALID_EXP(-(-(0)));
-
+    
     printf("All tests have passed!\n");
 
     return 0;

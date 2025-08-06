@@ -1,6 +1,7 @@
 #include "common.h"
 #include "stdio.h"
 #include "assert.h"
+#include "math.h"
 
 void test_valid_expression(const char* exp, double expected_value, expeval_context* ctx) {
     expeval_result result = expeval(exp, ctx);
@@ -30,4 +31,18 @@ void test_invalid_expression(const char* exp, expeval_result_code expected_code,
     assert(result.code == expected_code);
 
     printf("\n");
+}
+
+double absd(double x) {
+    char* ptr = (char*)&x;
+    *(ptr + (sizeof(double) - 1)) = *(ptr + (sizeof(double) - 1)) & 0x7f;
+    return x;
+}
+
+double pow2(double x) {
+    return pow(x, 2);
+}
+
+double modulo(double a, double b) {
+    return (int)a % (int)b;
 }
